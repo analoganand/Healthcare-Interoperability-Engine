@@ -59,7 +59,7 @@ async def Create_Patient(patient: dict):
     async with httpx.AsyncClient() as client:
             response = await client.post("https://hapi.fhir.org/baseR4",json=patient)
             data = response.json()
-            print(type(data))
+            # print(type(data))
             patientid = data.get("id")
 
             if patientid:
